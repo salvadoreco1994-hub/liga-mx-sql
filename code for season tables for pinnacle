@@ -1,0 +1,16 @@
+SELECT 
+    Season,
+    Home,
+    Away,
+    HG AS goles_local,
+    AG AS goles_visitante,
+    CASE 
+        WHEN Res = 'H' THEN 'Victoria Local'
+        WHEN Res = 'A' THEN 'Victoria Visitante'
+        WHEN Res = 'D' THEN 'Empate'
+    END AS Resultado,
+    PSCH AS Momio_Local,
+    PSCD AS Momio_Empate,
+    PSCA AS Momio_Visitante
+FROM mexico_bet
+WHERE Season = '2012/2013';
